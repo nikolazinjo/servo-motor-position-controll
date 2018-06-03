@@ -1,0 +1,31 @@
+{
+  "MotorOverload": {
+    "type": "Bool",
+    "value": "0"
+  },
+  "DriveOverTemp": {
+    "type": "Bool",
+    "value": "0"
+  },
+  "DriveWarning": {
+    "type": "Bool",
+    "value": "0"
+  },
+  "LastTripID": {
+    "type": "Number",
+    "precision": 0,
+    "value": "7"
+  },
+  "StatusWord": {
+    "type": "SW",
+    "value": "1"
+  },
+  "DriveStatus": {
+    "type": "CodeStatus",
+    "value": "16"
+  },
+  "AlarmID": {
+    "type": "CodeAlarm",
+    "value": "0"
+  }
+}

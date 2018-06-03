@@ -1,0 +1,33 @@
+{
+  "RevsErr": {
+    "type": "Number",
+    "precision": 0,
+    "value": "3"
+  },
+  "PosErr": {
+    "type": "Number",
+    "precision": 0,
+    "value": "432"
+  },
+  "Mode": {
+    "type": "Number",
+    "precision": 0,
+    "value": "1"
+  },
+  "RefInverted": {
+    "type": "Bool",
+    "value": "1"
+  },
+  "Absolute": {
+    "type": "Bool",
+    "value": "1"
+  },
+  "PosReset": {
+    "type": "Bool",
+    "value": "1"
+  }
+}
+
+
+
+

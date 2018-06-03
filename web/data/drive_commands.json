@@ -1,0 +1,37 @@
+{
+  "HWEnable": {
+    "type": "Bool",
+    "value": ":=p06_029_Hardware_Enable_IN:"
+  },
+  "Enable": {
+    "type": "Bool",
+    "value": ":=Drive_Enable_IN:"
+  },
+  "Run": {
+    "type": "Bool",
+    "value": ":=Run_IN:"
+  },
+  "Auto": {
+    "type": "Bool",
+    "value": ":=Auto/Manual_IN:"
+  },
+  "PresetRefOn": {
+    "type": "Bool",
+    "value": ":=Analog/Preset_Reference_IN:"
+  },
+  "Reverse": {
+    "type": "Bool",
+    "value": ":=Forward/Reverse_IN:"
+  },
+  "Trip": {
+    "type": "Bool",
+    "value": ":=Trip_Drive_IN:"
+  },
+  "Reset": {
+    "type": "Bool",
+    "value": ":=Drive_Reset_IN:"
+  }
+}
+
+
+

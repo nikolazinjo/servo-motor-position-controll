@@ -1,0 +1,31 @@
+{
+  "MotorOverload": {
+    "type": "Bool",
+    "value": ":=p10_017_Motor_Overload_Alarm:"
+  },
+  "DriveOverTemp": {
+    "type": "Bool",
+    "value": ":=p10_018_Drive_Over_Temperature_Alarm:"
+  },
+  "DriveWarning": {
+    "type": "Bool",
+    "value": ":=p10_019_Drive_Warning:"
+  },
+  "LastTripID": {
+    "type": "Number",
+    "precision": 0,
+    "value": ":=p10_020_Trip0:"
+  },
+  "StatusWord": {
+    "type": "SW",
+    "value": ":=p10_040_Status_Word:"
+  },
+  "DriveStatus": {
+    "type": "CodeStatus",
+    "value": ":=p10_101_Present_Drive_Status:"
+  },
+  "AlarmID": {
+    "type": "CodeAlarm",
+    "value": ":=p10_104_Alarm_Active:"
+  }
+}

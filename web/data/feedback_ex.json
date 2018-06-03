@@ -1,0 +1,17 @@
+{
+  "Speed"  : {
+    "type": "Number",
+    "precision" : 1,
+    "value": "0"
+  },
+  "Revolutions"  : {
+    "type": "Number",
+    "precision" : 0,
+    "value": "0"
+  },
+  "Position"  : {
+    "type": "Number",
+    "precision" : 0,
+    "value": "0"
+  }
+}

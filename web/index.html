@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Upravljanje Servo Pogonom</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="script/jquery-3.3.1.min.js" ></script>
+        <script type="text/javascript" src="script/script.js" async></script>
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="header">
+
+                <div id="logo">
+                    <div id="logo_text">
+                        <h1><a href="index.html">ZAVRŠNI RAD br. 5780</a></h1>
+                        <h2 class="description">Upravljanje položajem sevo pogona upotrebom
+                            frekvencijskog pretvarača Unidrive M701 i izrada mrežnog sučelja
+                            u programirljivom logičkom kontoleru S7-1200</h2>
+                        <div class="right_labels">
+                            <h2 class="name">Nikola Benazić</h2>
+                            <h2 class="name">Mentor: Izv. prof. dr. sc. Damir Sumina</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="menubar">
+                    <ul id="menu">
+                        <li><a id="home_page" class="loader" href="html/overview_partial.html">O ZAVRŠNOM RADU</a></li>
+                        <li><a class="loader" href="html/plc_S7_1200_partial.html">PLC S7-1200</a></li>
+                        <li><a class="loader" href="html/unidrive_M701_partial.html">UNIDRIVE M701</a></li>
+                        <li><a class="loader" href="html/servomotor_partial.html">SERVO MOTOR</a></li>
+                        <li><a id="positioning" class="loader" href="html/positioning_partial.html">UPRAVLJANJE</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="content_header"></div>
+            <div id="site_content">
+                <!--<div id="banner"></div>-->
+                <div id="sidebar_container">
+                    <div class="sidebar">
+                        <div class="sidebar_top"></div>
+                        <div class="sidebar_item">
+                            <h3>PLC S7-S1200&nbsp;&nbsp;<span class="status_colour">status</span></h3>
+                            <!--<h5>Prikaz statusa PLC-a</h5>-->
+                            <div>
+                                <table style="width:100%; border-spacing:0;">
+                                    <tr><td>SYSTEM FAULT</td><td><label class="indicator error"></label></td></tr>
+                                    <tr><td>STOP</td><td><label class="indicator error"></label></td></tr>
+                                    <tr><td>RUN</td><td><label class="indicator always-green"></label></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sidebar_base"></div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar_top"></div>
+                        <div class="sidebar_item">
+                            <h3>Unidrive M701&nbsp;&nbsp;<span class="status_colour">status</span></h3>
+                            <!--<h5>Prikaz statusa frekvencijskog pretvarača</h5>-->
+                            <div>
+                                <table style="width:100%; border-spacing:0;">
+                                    <tr><td>ALARM</td><td><label id="alarm_active" class="indicator AlarmID"></label></td></tr>
+                                    <tr><td>AKTIVAN</td><td><label id="active_drive" class="indicator HWEnable"></label></td></tr>
+                                    <tr><td>STATUS</td><td><label id="status" class="DriveStatus"></label></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sidebar_base"></div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar_top"></div>
+                        <div class="sidebar_item">
+                            <h3>SERVO MOTOR&nbsp;&nbsp;<span class="status_colour">status</span></h3>
+                            <!--<h5>Prikaz statusa frekvencijskog pretvarača</h5>-->
+                            <table style="width:100%; border-spacing:0;">
+                                <tr><td>BRZINA</td><td><label class="Speed"></label><span>&nbsp;rpm</span></td></tr>
+                                <tr><td>OKRETAJI</td><td><label class="Revolutions"></label></td></tr>
+                                <tr><td>POZICIJA</td><td><label class="Position"></label></td></tr>
+                            </table>
+                            <svg width="190" height="190" overflow="hidden">
+                                <rect id="motor" x="0" y="0" width="190" height="190"></rect>
+
+                                <circle id="hole1" r="7.25" cx="20" cy="20"></circle>
+                                <circle id="hole2" r="7.25" cx="170" cy="20"></circle>
+                                <circle id="hole3" r="7.25" cx="170" cy="170"></circle>
+                                <circle id="hole4" r="7.25" cx="20" cy="170"></circle>
+
+                                <circle  id="round_ex1" r="90" cx="95" cy="95"></circle>
+                                <circle  id="round_ex2" r="83" cx="95" cy="95"></circle>
+                                <circle  id="round_ex3" r="50" cx="95" cy="95"></circle>
+                                <circle  id="round_ex4" r="46" cx="95" cy="95"></circle>
+                                <circle  id="round_ex5" r="30" cx="95" cy="95"></circle>
+
+                                <circle  id="shaft" r="26" cx="95" cy="95"></circle>
+                                <g id="new_coordinate" transform="translate(95, 95)">
+                                    <g class="rotary">
+                                        <rect id="sprocket" x="-6" y="-34" height="12" width="12"></rect>
+                                        <polygon id="sprocket_stroke"  points="-6,-34 6,-34 6,-22 -6,-22"></polygon>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="sidebar_base"></div>
+                    </div>
+                </div>
+                <div id="content"></div>
+                <div id="content_footer"></div>
+            </div>
+            <div id="footer">
+                <p>
+                    <a class="loader" href="html/overview_partial.html">O ZAVRŠNOM RADU</a> |
+                    <a class="loader" href="html/plc_S7_1200_partial.html">PLC S7-1200</a> |
+                    <a class="loader" href="html/unidrive_M701_partial.html">UNIDRIVE M701</a> |
+                    <a class="loader" href="html/servomotor_partial.html">SERVO MOTOR</a> |
+                    <a class="loader" href="html/positioning_partial.html">UPRAVLJANJE</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

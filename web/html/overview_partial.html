@@ -1,0 +1,50 @@
+<h2>Kratki opis</h2>
+<hr>
+
+<div class="row" style="display: block">
+    <p>
+        U ovom završnom radu ostvareno je upravljanje položajem servo
+        pogona upotrebom frekvencijskog pretvarača Unidrive M701 pri
+        čemu se upravljanje ostvaruje korištenjem mrežnog sučelja,
+        odnosno Web stranice čiji je poslužitelj programirljivi logički
+        kontroler S7-1200.
+    </p>
+    <p>
+        Razmjena podataka se postiže na način da se poslužitelju preko HTTP/HTTPS
+        protokola u parametrima zahtjeva proslijede vrijednosti podataka i
+        postavke rada koje želimo postaviti. Podaci se dohvaćaju
+        i postavljaju u PLC-u upotrebom AJAX-a (<i>Asynchronus JavaScript
+        and XML</i>) tehnologije koja osigurava asinkronu razmjenu podataka
+        te dinamičko osvježavanje podataka u pozadini Web
+        aplikacije bez potrebe za ponovnim osvježavanjem
+        cijelog sadržaja stranice. Željeni podaci čije se vrijednosti nalaze
+        na odeđenim memoriskim lokacijama PLC-a će biti promijenjeni usljed
+        poslanog zahtjeva s novim vrijednostima podataka (ime podatka te
+        njegova vrijednost), odnosno, pročitani ukoliko se radi o dohvaćanju
+        podataka. Primljeni podaci strukturirani su u JSON
+        (<i>JavaScript Object Notation</i>) formatu sa vrijednostima
+        koje su trenutno nalaze na memorijskim adresama PLC-a. Primljeni podaci
+        se potom ažuriraju na odgovarajuće elemente unutar Web stranice.
+    </p>
+    <p>
+        Komunikacija između PLC-a i pretvarača omogućena je industrijskim
+        komunikacijskim standardom PROFINET temeljenog na postojećoj Ethernet
+        tehnologiji kojom se ostvaruje upravljanje i razmjena podataka.
+        Vrijednosti varijabli koje se osvježavaju prilikom pristiglih zahtjeva
+        preko HTTP/HTTPS protokola izazvati će određenu promjenu vrijednosti
+        na izlaznim adresama nastalih usljed izvođenja korisničkog
+        programa unutar PLC-a. Takvi će se obrađeni podaci i naredbe
+        postaviti na adresne izlaze PLC-a te putem PROFINET komunikacije proslijediti
+        pretvaraču čime se ostvaruje željeno upravljanje.
+    </p>
+    <p>
+        Pozicioniranje servo pogona ostvareno je korisničkom defeniranom funkcijom
+        pozicijoniranja kojom se može zadati različiti željeni parametri. Funkcija je
+        napravljena da izvršava relativno pozicioniranje za proizvoljnu zadanu vrijednost
+        pozicije u naprijed,
+        u nazad te povratak u početnu poziciju s dodatnom mogućnošću definiranja trajanja
+        pojedinih koraka.<br><br>
+        Osim korisnički definirane funkcije moguće je i proizvoljno zadavanje reference,
+        mijenjanje načina rada pozicioniranja, te osnovno zadavanje brzine.
+    </p>
+</div>

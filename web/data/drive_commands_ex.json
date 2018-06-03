@@ -1,0 +1,37 @@
+{
+  "HWEnable": {
+    "type": "Bool",
+    "value": "1"
+  },
+  "Enable": {
+    "type": "Bool",
+    "value": "1"
+  },
+  "Run": {
+    "type": "Bool",
+    "value": "0"
+  },
+  "Auto": {
+    "type": "Bool",
+    "value": "1"
+  },
+  "PresetRefOn": {
+    "type": "Bool",
+    "value": "1"
+  },
+  "Reverse": {
+    "type": "Bool",
+    "value": "0"
+  },
+  "Trip": {
+    "type": "Bool",
+    "value": "0"
+  },
+  "Reset": {
+    "type": "Bool",
+    "value": "0"
+  }
+}
+
+
+

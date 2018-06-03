@@ -1,0 +1,33 @@
+{
+  "RevsErr": {
+    "type": "Number",
+    "precision": 0,
+    "value": ":=p13_001_SM_Revolution_Error_IN:"
+  },
+  "PosErr": {
+    "type": "Number",
+    "precision": 0,
+    "value": ":=p13_002_SM_Position_Error_IN:"
+  },
+  "Mode": {
+    "type": "Number",
+    "precision": 0,
+    "value": ":=p13_010_SM_Controller_Mode_IN:"
+  },
+  "RefInverted": {
+    "type": "Bool",
+    "value": ":=p13_006_SM_Reference_Invert_IN:"
+  },
+  "Absolute": {
+    "type": "Bool",
+    "value": ":=p13_011_SM_Absolute_Mode_Enable_IN:"
+  },
+  "PosReset": {
+    "type": "Bool",
+    "value": ":=p13_016_SM_Position_Error_Reset_IN:"
+  }
+}
+
+
+
+

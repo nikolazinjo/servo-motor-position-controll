@@ -1,0 +1,17 @@
+{
+  "Speed"  : {
+    "type": "Number",
+    "precision" : 1,
+    "value": ":=p03_027_P1_Speed_Feedback:"
+  },
+  "Revolutions"  : {
+    "type": "Number",
+    "precision" : 0,
+    "value": ":=p03_028_P1_Revolution/Pole_Pitch_Counter:"
+  },
+  "Position"  : {
+    "type": "Number",
+    "precision" : 0,
+    "value": ":=p03_029_P1_Position:"
+  }
+}

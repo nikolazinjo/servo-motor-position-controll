@@ -1,0 +1,185 @@
+<h2>Upravljanje frekvencijskim pretvaračem</h2>
+<hr>
+
+<div id="hw_enable" class="alert alert-warning HWEnable">
+    <strong>Pretvarač nije omogućen za rad! Uključite HARDWARE ENABLE!</strong>
+</div>
+<div id="alarm" class="alert alert-danger AlarmID">
+    <strong>Alarm aktivan! <span></span></strong>
+</div>
+<div class="row">
+    <div class="col-half">
+        <h2>Omogućavanje pretvarača</h2>
+        <hr>
+        <form id="base_commands" class="form_settings">
+            <p>
+                <span>Omogući</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".enable' value=""/>
+                <label id="label_enable" class="indicator small-on-off Enable"></label>
+            </p>
+            <p>
+                <span>Preset referenca na A1/A2</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".preset_ref_on' value=""/>
+                <label id="label_preset" class="indicator small-on-off PresetRefOn"></label>
+            </p>
+            <p>
+                <span>Suprotan smjer</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".reverse' value=""/>
+                <label id="label_ccw" class="indicator small-on-off Reverse"></label>
+            </p>
+            <p>
+                <span>Auto način</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".auto' value=""/>
+                <label id="label_auto" class="indicator small-on-off Auto"></label>
+            </p>
+            <p>
+                <span>Dojavi grešku</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".trip' value=""/>
+                <label id="label_trip" class="indicator small-on-off Trip"></label>
+            </p>
+            <p>
+                <span>Resetiraj greške</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".reset' value=""/>
+                <label id="label_reset" class="indicator small-on-off Reset"></label>
+            </p>
+            <hr>
+            <p>
+                <span>START</span>
+                <input class="checkbox" type="checkbox" name='"DriveCommands".run' value=""/>
+                <label id="label_run" class="indicator small-on-off Run"></label>
+            </p>
+        </form>
+    </div>
+    <div class="col-half">
+        <h2>Dodatne postavke pretvarača</h2>
+        <hr>
+        <form id="additional_form" class="form_settings">
+            <input id="preset_selector" type="hidden" value="1" name='Preset_selector_OUT"'>
+            <p>
+                <span>Selektor reference brzine</span>
+                <select id="speed_ref_select" name='"Reference_selector_OUT"'>
+                    <option value="0">A1/A2</option>
+                    <option value="1">A1 Preset</option>
+                    <option value="2">A2 Preset</option>
+                    <option value="3">Preset</option>
+                    <option value="4">Keypad</option>
+                    <option value="5">Precision</option>
+                    <option value="6">Keypad Ref</option>
+                </select>
+            </p>
+            <p>
+                <span>Referenca brzine</span>
+                <input id="speed_ref" name='"Preset_reference_1_value_OUT"' type="number" min="-50000.0" max="50000.0" step="0.1">
+            </p>
+        </form>
+    </div>
+</div>
+
+<h2>Upravljanje pozicijom</h2>
+<hr>
+<div class="row">
+    <div class="col-half">
+        <form id="controller_param" class="form_settings">
+            <p>
+                <span>Apsolutno pozicioniranje</span>
+                <input id="absolute_mode" name='"PositionConfig".absolute_mode' class="checkbox" type="checkbox"/>
+                <label id=label_absolute_mode" class="indicator small-on-off Absolute"></label>
+            </p>
+            <p>
+                <span>Negacija reference</span>
+                <input id="ref_inverted" class="checkbox" type="checkbox" name='"PositionConfig".ref_inverted'/>
+                <label id="label_ref_inverted" class="indicator small-on-off RefInverted"></label>
+            </p>
+            <p>
+                <span>Reset odstupanja pozicije</span>
+                <input id="error_reset" class="checkbox" type="checkbox" name='"PositionConfig".error_reset'/>
+                <label id="label_error_reset" class="indicator small-on-off PosReset" ></label>
+            </p>
+            <p>
+                <span>Vrsta pozicioniranja</span>
+                <select id="mode" name='"PositionConfig".mode'>
+                    <option value="0">Isključeno</option>
+                    <option value="1">Rigid Spd FF</option>
+                    <option value="2">Rigid</option>
+                    <option value="3">Non-rigid Spd FF</option>
+                    <option value="4">Non-rigid</option>
+                    <!--<option value="5">Orientate Stop</option>-->
+                    <!--<option value="6">Orientate</option>-->
+                </select>
+            </p>
+            <p>
+                <span>Brzina pri pozicioniranju</span>
+                <input id="speed" name='"PositionConfig".speed' type="number" min="0" max="250" step="1">
+            </p>
+        </form>
+    </div>
+
+    <div class="col-half">
+        <form id="position_form" class="form_settings">
+            <p>
+                <span>Broj punih okretaja</span>
+                <input id="revolutions" name='"PositionConfig".revolutions' type="number" min="0" max="65535" step="1" required>
+            </p>
+            <p>
+                <span>Odmak pozicije</span>
+                <input id="position" name='"PositionConfig".position' type="number" min="0" max="65535" step="1" required>
+            </p>
+            <p style="padding-top: 15px">
+                <span>&nbsp;</span>
+                <input class="submit" type="submit" name="ignore_name" value="POSTAVI"/>
+            </p>
+        </form>
+    </div>
+</div>
+
+
+<h2>Korisnički definirana funkcija pozicioniranja</h2>
+<hr>
+<div class="row">
+    <div class="col-half">
+        <form id="function_form" class="form_settings">
+            <p>
+                <span>Trajanje mirovanja pri startu</span>
+                <input id="time_start" name='"PositionCycleParamsDB".time_start' type="number" min="1" max="2147483647" step="1" required> ms
+            </p>
+            <p>
+                <span>Trajanje akcije u naprijed</span>
+                <input id="time_fwd" name='"PositionCycleParamsDB".time_fwd' type="number" min="1" max="2147483647" step="1" required> ms
+            </p>
+            <p>
+                <span>Trajanje akcije u nazad</span>
+                <input id="time_bwd" name='"PositionCycleParamsDB".time_bwd' type="number" min="1" max="2147483647" step="1" required> ms
+            </p>
+            <p>
+                <span>Trajanje mirovanja pri kraju</span>
+                <input id="time_stop" name='"PositionCycleParamsDB".time_stop' type="number" min="1" max="2147483647" step="1" required> ms
+            </p>
+            <p>
+                <span>Broj punih okretaja naprijed</span>
+                <input id="revolutions_fwd" name='"PositionCycleParamsDB".revolutions_fwd' type="number" min="0" max="65535" step="1" required>
+            </p>
+            <p>
+                <span>Odmak pozicije naprijed</span>
+                <input id="position_fwd" name='"PositionCycleParamsDB".position_fwd' type="number" min="0" max="65535" step="1" required>
+            </p>
+            <p>
+                <span>Broj punih okretaja nazad</span>
+                <input id="revolutions_bwd" name='"PositionCycleParamsDB".revolutions_bwd' type="number" min="0" max="65535" step="1" required>
+            </p>
+            <p>
+                <span>Odmak pozicije nazad</span>
+                <input id="position_bwd" name='"PositionCycleParamsDB".position_bwd' type="number" min="0" max="65535" step="1" required>
+            </p>
+            <input type="hidden" name='"PositionCycleParamsDB".start' value="1">
+            <p style="padding-top: 15px">
+                <span>&nbsp;</span>
+                <input class="submit" type="submit" name="ignore_name" value="POKRENI"/>
+            </p>
+        </form>
+    </div>
+    <div class="col-half">
+        <span class="right">
+            <img id="ciklus-img" src="images/ciklus.jpg"/>
+        </span>
+    </div>
+</div>
